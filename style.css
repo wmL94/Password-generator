@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background-color: #16111a;
+}
+
+.container {
+  margin: 0 auto;
+  width: 54rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: hsl(0, 0%, 90%);
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: hsl(252, 11%, 100%);
+  letter-spacing: 3px;
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  padding: 0 3.2rem;
+  margin-bottom: 2.4rem;
+  background-color: #2d2039;
+}
+
+.password-display {
+  font-size: 3.2rem;
+  color: hsl(252, 11%, 91%);
+}
+
+.password-placeholder {
+  font-size: 3.2rem;
+  color: hsl(275, 91%, 79%);
+  opacity: 0.25;
+}
+
+.copy-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.copied-text {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: hsl(275, 91%, 59%);
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-btn:hover img {
+  filter: contrast(3.5);
+}
+
+.password-settings {
+  padding: 2.4rem 3.2rem 3.2rem;
+  background-color: hsl(271, 28%, 17%);
+}
+
+.char-length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2.2rem;
+}
+
+.char-count {
+  font-size: 3.2rem;
+  color: hsl(275, 91%, 59%);
+  font-weight: 500;
+}
+
+.char-length-slider {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  margin-bottom: 3.6rem;
+  background: linear-gradient(to right, hsl(275, 91%, 59%), hsl(275, 91%, 59%)) hsl(271, 28%, 17%);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+
+.char-length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid hsl(252, 11%, 91%);
+  border-radius: 50%;
+  background-color: hsl(252, 11%, 91%);
+  cursor: pointer;
+}
+
+.char-length-slider::-webkit-slider-thumb:hover {
+  border: 2px solid hsl(275, 91%, 59%);
+  background-color: hsl(271, 28%, 17%);
+}
+
+.char-length-slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.char-include-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-bottom: 3.4rem;
+}
+
+label {
+  display: block;
+  padding-left: 4.4rem;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid hsl(252, 11%, 91%);
+  cursor: pointer;
+}
+
+.custom-checkbox::after {
+  display: none;
+  content: url("../images/checkmark.svg");
+  position: absolute;
+  top: 3px;
+}
+
+.custom-checkbox:hover {
+  border-color: hsl(275, 91%, 59%);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  border-color: hsl(275, 91%, 59%);
+  background-color: hsl(275, 91%, 59%);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox::after {
+  display: block;
+}
+
+input[type="checkbox"]:focus ~ .custom-checkbox {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+}
+
+.strength-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: hsl(271, 28%, 17%);
+  margin-bottom: 3.2rem;
+  padding: 0 3.2rem;
+  height: 7.2rem;
+  background-color: hsl(275, 91%, 59%);
+}
+
+.strength-rating {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.strength-rating-text {
+  font-size: 2.4rem;
+  color: hsl(252, 11%, 91%);
+}
+
+.strength-rating-bars {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.bar {
+  width: 1rem;
+  height: 2.8rem;
+  border: 2px solid hsl(252, 11%, 91%);
+  background: none;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: white;
+  width: 100%;
+  padding: 1.9rem 0;
+  border: 2px solid hsl(275, 91%, 59%);
+  background-color: hsl(275, 91%, 59%);
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  color: white;
+  background-color: hsl(271, 28%, 17%);
+}
+
+.generate-btn:hover path {
+  fill: hsl(275, 91%, 59%)
+}
